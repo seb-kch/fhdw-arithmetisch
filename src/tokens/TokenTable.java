@@ -18,6 +18,8 @@ public class TokenTable {
 	}
 	private void fillTable() {
 		this.tokenPerCharacter.put('+', new AdditionSymbol());
+//		this.tokenPerCharacter.put('*', new MultiplicationSymbol());
+//		this.tokenPerCharacter.put('(',  new BracketOpen());
 		// MultiplicationSymbol, Brackets, ...
 	}
 	public boolean isValid(Character c) {
