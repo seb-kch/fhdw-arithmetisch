@@ -15,4 +15,8 @@ public interface Lexer {
  * Enables state pattern
  */
 	void setState(LexerState newState);
+/**	
+ * Adds a new token to the result list
+ */
+	public void addToken(Token t);
 }

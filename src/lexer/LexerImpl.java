@@ -26,4 +26,7 @@ public class LexerImpl implements Lexer {
 	public void setState(LexerState newState){
 		this.state = newState;
 	}
+	public void addToken(Token t) {
+		this.currentResult.add(t);
+	}
 }

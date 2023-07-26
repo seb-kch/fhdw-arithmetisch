@@ -6,9 +6,9 @@ package lexer;
  */
 public interface LexerState {
 /**
- * May add symbol to current Scanner result depending on <c>, 
+ * May add symbol to lexer result depending on <c>, 
  * May erase <c> in input string 
  * May change state    
  */
-	public abstract void scan(Character c);
+	public abstract void scan(Character c, Lexer lexer);
 }
