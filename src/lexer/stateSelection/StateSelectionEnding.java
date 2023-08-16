@@ -8,7 +8,7 @@ import lexer.LexerState;
  * Chain Ending!
  */
 class StateSelectionEnding implements StateSelector {
-	public LexerState selectStateFor(Character c, Lexer scanner) {
-		return new ErrorState(scanner);
+	public LexerState selectStateFor(Character c, Lexer lexer) {
+		return new ErrorState(lexer);
 	}
 }

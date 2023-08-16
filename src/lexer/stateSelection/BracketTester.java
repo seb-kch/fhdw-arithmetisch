@@ -11,6 +11,6 @@ class BracketTester extends StateSelectionLink {
 		super(successor);
 	}
 	public boolean myCondition(Character c) {return TextConstants.isBracket(c);}
-	public LexerState myState(Lexer scanner) {return new BracketState(scanner);}
+	public LexerState myState(Lexer lexer) {return new BracketState(lexer);}
 }
 

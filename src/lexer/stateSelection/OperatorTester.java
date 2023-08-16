@@ -11,5 +11,5 @@ class OperatorTester extends StateSelectionLink {
 		super(successor);
 	}
 	public boolean myCondition(Character c) {return TokenTable.getInstance().exists(c);}
-	public LexerState myState(Lexer scanner) 	{return new OperatorState(scanner);}
+	public LexerState myState(Lexer lexer) 	{return new OperatorState(lexer);}
 }

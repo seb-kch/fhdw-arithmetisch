@@ -21,4 +21,8 @@ public class DigitState extends LexerState {
 	public void addSymbol(){
 		this.getMyLexer().addSymbol(new NaturalNumberToken(this.collectedDigits));
 	}
+	@Override
+	public void onTermination() {
+		this.addSymbol();
+	}
 }

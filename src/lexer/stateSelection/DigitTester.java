@@ -10,5 +10,5 @@ class DigitTester extends StateSelectionLink {
 		super(successor);
 	}
 	public boolean myCondition(Character c) {return Character.isDigit(c);}
-	public LexerState myState(Lexer scanner) {return new DigitState(scanner);}
+	public LexerState myState(Lexer lexer) {return new DigitState(lexer);}
 }

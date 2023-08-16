@@ -17,12 +17,19 @@ public class LexerImpl implements Lexer {
 	public List<Token> toTokenSequence(String expr){ 
 		this.currentResult.clear();
 		this.currentExpression = expr;				
-		
-// Main Loop with delegation of work to state objects:
-		while(this.currentExpression.length()>0) this.state.scan(this.currentExpression.charAt(0));
 
+// Main Loop with delegation of work to state objects:
+		while(this.currentExpression.length()>0) 
+			this.state.scan(this.currentExpression.charAt(0));
+		
+		this.state.onTermination();
+		
 		return this.currentResult; 
 	}
+/**	
+ * REQUIRES !this.currentExpression.isEmpty()
+ * Removes the first character of this.currentExpression
+ */
 	public void skip(){
 		this.currentExpression = this.currentExpression.substring(1);
 	}

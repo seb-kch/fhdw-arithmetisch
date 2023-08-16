@@ -11,7 +11,7 @@ public class StateSelectionGateway implements StateSelector{
  */
 		this.first = new WhiteSpaceTester(new DigitTester(new BracketTester(new OperatorTester(new StateSelectionEnding()))));
 	}
-	public LexerState selectStateFor(Character c, Lexer scanner) {
-		return this.first.selectStateFor(c, scanner);
+	public LexerState selectStateFor(Character c, Lexer lexer) {
+		return this.first.selectStateFor(c, lexer);
 	}
 }

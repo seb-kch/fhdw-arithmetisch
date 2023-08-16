@@ -94,7 +94,7 @@ class LexerTest {
 	}
 	@Test
 	void test9() {
-		List<Token> result = lexer.toTokenSequence("701 89");
+		List<Token> result = lexer.toTokenSequence("701     89");
 		List<Token> expected = new ArrayList<>();
 		expected.add(new NaturalNumberToken(701));
 		expected.add(new NaturalNumberToken(89));

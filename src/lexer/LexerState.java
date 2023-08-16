@@ -12,11 +12,18 @@ public abstract class LexerState {
 	}
 
 /**
- * May add symbol to current Scanner result depending on <c>, 
+ * May add symbol to current Lexer result depending on <c>, 
  * May erase <c> in input string 
  * May change state    
  */
 	public abstract void scan(Character c);
+/**	
+ * Perform work if input expression is empty  
+ * Default implementation: do nothing
+ */
+	public void onTermination() {
+		return;
+	}
 	
 // =================================================================
 // ================ Auxiliary operations for subclasses ============

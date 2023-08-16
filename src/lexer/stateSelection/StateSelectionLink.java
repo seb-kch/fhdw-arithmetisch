@@ -10,14 +10,14 @@ abstract class StateSelectionLink implements StateSelector{
 		this.successor = successor;
 	}
 	public abstract boolean myCondition(Character c);
-	public abstract LexerState myState(Lexer scanner);
+	public abstract LexerState myState(Lexer lexer);
 
 /**	
  * Chain delegation template
  */
-	public LexerState selectStateFor(Character c, Lexer scanner) {
-		if(myCondition(c)) 	return myState(scanner);
-		else				return this.getSuccessor().selectStateFor(c, scanner); 
+	public LexerState selectStateFor(Character c, Lexer lexer) {
+		if(myCondition(c)) 	return myState(lexer);
+		else				return this.getSuccessor().selectStateFor(c, lexer); 
 	}
 	public StateSelector getSuccessor() {
 		return this.successor;

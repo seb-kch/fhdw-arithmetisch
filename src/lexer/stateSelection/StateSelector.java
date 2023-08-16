@@ -7,7 +7,7 @@ import lexer.LexerState;
  */
 public interface StateSelector {
 /**
- * Depending on <c> return a new state for <scanner> 	
+ * Depending on <c> return a new state for <lexer> 	
  */
-	public LexerState selectStateFor(Character c, Lexer scanner);
+	public LexerState selectStateFor(Character c, Lexer lexer);
 }

@@ -10,5 +10,5 @@ class WhiteSpaceTester extends StateSelectionLink {
 		super(successor);
 	}
 	public boolean myCondition(Character c) {return Character.isWhitespace(c);}
-	public LexerState myState(Lexer scanner) {return new WhitespaceState(scanner);}
+	public LexerState myState(Lexer lexer) {return new WhitespaceState(lexer);}
 }
