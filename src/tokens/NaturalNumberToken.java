@@ -14,4 +14,9 @@ public class NaturalNumberToken implements Token {
 	public String toString() {
 		return this.value+"";
 	}
+	public boolean equals(Object obj) {
+		if(!(obj instanceof NaturalNumberToken)) return false;
+		return ((NaturalNumberToken)obj).value.equals(this.value);
+	}
+	
 }
