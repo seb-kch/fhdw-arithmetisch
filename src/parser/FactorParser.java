@@ -17,6 +17,7 @@ public class FactorParser {
 	Factor toExpression(List<Token> tokenList) { // TODO: Exception Handling
 		Token nextToken = tokenList.get(0);
 		if(nextToken instanceof NaturalNumberToken) {
+			tokenList.remove(0);
 			NaturalNumberToken nextTokenAsNaturalNumberToken = (NaturalNumberToken)nextToken;
 			return new NaturalNumber(nextTokenAsNaturalNumberToken);
 		}	

@@ -1,7 +1,6 @@
 package parser;
 
 import java.util.List;
-
 import expressions.Summand;
 import tokens.Token;
 
