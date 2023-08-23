@@ -10,6 +10,7 @@ import expressions.Expression;
 import expressions.NaturalNumber;
 import expressions.Sum;
 import parser.ExpressionParser;
+import parser.ExpressionParserProxy;
 import tokens.AdditionSymbol;
 import tokens.NaturalNumberToken;
 import tokens.Token;
@@ -24,7 +25,7 @@ class ParserTest {
 		NaturalNumberToken nnToken = new NaturalNumberToken(0);
 		this.input.add(nnToken);
 		Expression expectedExpression = new NaturalNumber(nnToken);
-		assertEquals(expectedExpression, new ExpressionParser().toExpression(this.input));
+		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
 	@Test //"0+0"
 	void test2() {
@@ -33,7 +34,7 @@ class ParserTest {
 		this.input.add(AdditionSymbol.getTheInstance());
 		this.input.add(nnToken);
 		Expression expectedExpression = new Sum(new NaturalNumber(nnToken), new NaturalNumber(nnToken));
-		assertEquals(expectedExpression, new ExpressionParser().toExpression(this.input));
+		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
-
+// TODO Viele mehr Tests
 }

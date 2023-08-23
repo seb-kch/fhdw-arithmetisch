@@ -6,6 +6,7 @@ import expressions.Expression;
 import expressions.Sum;
 import expressions.Summand;
 import tokens.AdditionSymbol;
+import tokens.EndToken;
 import tokens.Token;
 
 /**
@@ -17,7 +18,7 @@ import tokens.Token;
 public class ExpressionParser { 
 	public Expression toExpression(List<Token> tokenList){
 		Summand s = new SummandParser().toExpression(tokenList);
-		Token nextToken = tokenList.get(0); // Ok, if precondition is satisfied 
+		Token nextToken = tokenList.get(0);  
 		if(nextToken instanceof AdditionSymbol) {
 			tokenList.remove(0);
 			return new Sum(s, new ExpressionParser().toExpression(tokenList));
