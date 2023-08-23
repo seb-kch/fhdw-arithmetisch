@@ -8,7 +8,7 @@ import tokens.Token;
  * Responsible for parsing of expressions of type 
  * F*S or F
  */
-public class SummandParser { // TODO: ExceptionHandling
+public class SummandParser { 
 	Summand toExpression(List<Token> tokenList) {
 		// TODO: Implement me!
 		// Similar to ExpressionParser: 

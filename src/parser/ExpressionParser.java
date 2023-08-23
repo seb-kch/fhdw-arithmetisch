@@ -14,7 +14,7 @@ import tokens.Token;
  * 
  * REQUIRES: !tokenList.isEmpty()  
  */
-public class ExpressionParser { // TODO: Exception Handling
+public class ExpressionParser { 
 	public Expression toExpression(List<Token> tokenList){
 		Summand s = new SummandParser().toExpression(tokenList);
 		Token nextToken = tokenList.get(0); // Ok, if precondition is satisfied 
