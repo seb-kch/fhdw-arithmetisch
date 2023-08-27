@@ -8,18 +8,23 @@ import tokens.MultiplicationSymbol;
 import tokens.Token;
 
 /**
- * Responsible for parsing of expressions of type 
+ * Responsible for parsing of expressions of type
  * F*S or F
  */
-public class SummandParser { 
-	Summand toExpression(List<Token> tokenList) {
-		Factor f = new FactorParser().toExpression(tokenList);
-		if(tokenList.get(0) instanceof MultiplicationSymbol) {
-			// TODO  
-			// recursive call with result s and return new Product(f,s)
-			return null;
-		}else {
-			return f;
-		}
-	}
+public class SummandParser {
+    Summand toExpression(List<Token> tokenList) {
+        Factor f = new FactorParser().toExpression(tokenList);
+        if (tokenList.get(0) instanceof MultiplicationSymbol multiplicationSymbol) {
+            return null;
+        } else {
+            return f;
+        }
+        // TODO: Implement me!
+        // Similar to ExpressionParser:
+        // 1. Delegate to FactorParser, result f
+        // 2. If '*' detected, recursive call with result s and
+        //		return new Product(f,s)
+        //    else
+        //      return f.
+    }
 }

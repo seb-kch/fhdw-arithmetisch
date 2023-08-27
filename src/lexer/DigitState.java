@@ -18,6 +18,8 @@ public class DigitState extends LexerState {
 			this.endOfProcessing();
 		}
 	}
+
+
 	public void addSymbol(){
 		this.getMyLexer().addSymbol(new NaturalNumberToken(this.collectedDigits));
 	}

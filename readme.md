@@ -1,0 +1,6 @@
+## 24)
+![src/](src/lexer/stateSelection/UML.svg)
+## 25 a)
+![src/](documentation/woche_6/arithmetic(25a).svg)
+## 25 b)
+![src/](documentation/woche_6/arithmetic(25b).svg)

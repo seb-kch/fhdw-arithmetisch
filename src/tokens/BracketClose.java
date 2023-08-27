@@ -13,7 +13,7 @@ public class BracketClose implements Token {
 		super();
 	}
 /**
- * Gibt DIE einzige Instanz zurück
+ * Gibt DIE einzige Instanz zurÃ¼ck
  */	
 	public static BracketClose getTheInstance(){
 		if (theInstance==null) theInstance = new BracketClose();

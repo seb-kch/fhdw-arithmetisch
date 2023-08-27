@@ -109,4 +109,15 @@ class LexerTest {
 		expected.add(BracketClose.getTheInstance());
 		assertEquals(expected, result);
 	}
+	@Test
+	void test11() {
+		List<Token> result = lexer.toTokenSequence("(1+2)");
+		List<Token> expected = new ArrayList<>();
+		expected.add(BracketOpen.getTheInstance());
+		expected.add(new NaturalNumberToken(1));
+		expected.add(AdditionSymbol.getTheInstance());
+		expected.add(new NaturalNumberToken(2));
+		expected.add(BracketClose.getTheInstance());
+		assertEquals(expected, result);
+	}
 }
