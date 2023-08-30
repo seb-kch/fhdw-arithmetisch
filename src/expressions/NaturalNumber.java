@@ -1,10 +1,7 @@
 package expressions;
-
-import tokens.NaturalNumberToken;
-
 public class NaturalNumber implements Factor {
 	private tokens.NaturalNumberToken theToken;
-	public NaturalNumber(NaturalNumberToken theToken) {
+	public NaturalNumber(tokens.NaturalNumberToken theToken) {
 		super();
 		this.theToken = theToken;
 	}
@@ -16,9 +13,12 @@ public class NaturalNumber implements Factor {
 		return this.theToken.equals(((NaturalNumber)o).theToken); 
 	}
 	public Integer evaluate() {
-		return this.getValue();
+		return this.theToken.getValue();
 	}
 	public String toString(){
 		return this.theToken.toString();
 	}
+	public <T> T accept(ExpressionVisitor<T> ev) {
+		return ev.handle(this);
+	}	
 }

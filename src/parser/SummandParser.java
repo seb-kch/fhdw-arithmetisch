@@ -2,24 +2,37 @@ package parser;
 
 import java.util.List;
 
+import exceptions.ParserException;
 import expressions.Factor;
+import expressions.Product;
 import expressions.Summand;
+import operators.BinaryOperator;
+import tokens.DivisionSymbol;
 import tokens.MultiplicationSymbol;
 import tokens.Token;
-
 /**
- * Responsible for parsing of expressions of type 
- * F*S or F
+ * Responsible for parsing structures of variable S of the syntax rules 
+ * The common interface of parsers of different summand parse tree construction
  */
-public class SummandParser { 
-	Summand toExpression(List<Token> tokenList) {
-		Factor f = new FactorParser().toExpression(tokenList);
-		if(tokenList.get(0) instanceof MultiplicationSymbol) {
-			// TODO  
-			// recursive call with result s and return new Product(f,s)
-			return null;
-		}else {
-			return f;
-		}
-	}
+abstract class SummandParser extends Parser{
+/**	
+ * @param tokenList
+ * @returns parseTree from tokenList
+ * @throws ParserException on syntax error 
+ */
+	public Summand toExpression(List<Token> tokenList) throws ParserException{
+		Factor first = new FactorParser().toExpression(tokenList);
+		Token nextToken = tokenList.get(0);
+		if(nextToken instanceof MultiplicationSymbol | nextToken instanceof DivisionSymbol) {
+			tokenList.remove(0);
+			return this.createProduct(first, this.getOperator(nextToken), AbstractParserFactory.getTheFactory().createSummandParser().toExpression(tokenList));
+		}		
+		return first;
+	}	
+/**
+ * @param firstFactor
+ * @param rest
+ * @returns a product or quotient consisting of firstFactor and rest (either one factor or the remaining product / quotient)  
+ */
+	public abstract Product createProduct(Factor firstFactor, BinaryOperator op, Summand rest);
 }

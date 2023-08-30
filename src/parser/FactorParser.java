@@ -2,31 +2,33 @@ package parser;
 
 import java.util.List;
 
+import basic.TextConstants;
+import exceptions.ParserException;
 import expressions.BracketExpression;
 import expressions.Expression;
 import expressions.Factor;
 import expressions.NaturalNumber;
-import tokens.BracketClose;
-import tokens.BracketOpen;
-import tokens.NaturalNumberToken;
-import tokens.Token;
+import tokens.*;
 /**
- * Responsible for parsing expressions of type n (a natural number) or (E)
+ * Responsible for parsing expressions of shape "(E)" or "n\in Nat"
  */
-public class FactorParser {
-	Factor toExpression(List<Token> tokenList) { // TODO: Exception Handling
+class FactorParser extends Parser{
+	public FactorParser() {
+		super();
+	}
+	public Factor toExpression(List<Token> tokenList) throws ParserException{
 		Token nextToken = tokenList.get(0);
-		if(nextToken instanceof NaturalNumberToken) {
-			tokenList.remove(0);
-			NaturalNumberToken nextTokenAsNaturalNumberToken = (NaturalNumberToken)nextToken;
-			return new NaturalNumber(nextTokenAsNaturalNumberToken);
-		}	
+		if(nextToken instanceof NaturalNumberToken) 
+			return new NaturalNumber((NaturalNumberToken)tokenList.remove(0));
 		if(nextToken instanceof BracketOpen) {
 			tokenList.remove(0);
-			Expression e = new ExpressionParser().toExpression(tokenList);
-			if(tokenList.get(0) instanceof BracketClose) return new BracketExpression(e);
-			else 										 return null; // Replace with Exception	
+			Expression e = AbstractParserFactory.getTheFactory().createExpressionParser().toExpression(tokenList);
+			if(tokenList.get(0) instanceof BracketClose) {
+				tokenList.remove(0);
+				return new BracketExpression(e);
+			}
+			else throw new ParserException("Missing closing bracket!");
 		}
-		return null; // Replace with Exception!
+		throw new ParserException(TextConstants.EXPECTED + " natural number or bracket expression, "+ TextConstants.FOUND + nextToken);
 	}
 }
