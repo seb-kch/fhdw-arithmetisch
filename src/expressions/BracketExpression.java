@@ -13,6 +13,9 @@ public class BracketExpression implements Factor {
 	}
 	public Integer evaluate() {
 		// TODO Auto-generated method stub
-		return null;
-	}	
+		return expression.evaluate();
+	}
+	public boolean equals(Object obj) {
+		return obj instanceof BracketExpression;
+	}
 }

@@ -4,8 +4,18 @@ package expressions;
  */
 // TODO Complete this class
 public class Product implements Summand {
+
+	private Factor factor;
+	private Summand summand;
+	public Product(Factor f, Summand s) {
+		this.factor = f;
+		this.summand = s;
+	}
+
 	public Integer evaluate(){
-		// TODO Implement this method
-		return 0;
+		return factor.evaluate() * summand.evaluate();
+	}
+	public boolean equals(Object obj) {
+		return obj instanceof Product;
 	}
 }

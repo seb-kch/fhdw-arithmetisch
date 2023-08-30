@@ -3,6 +3,7 @@ package parser;
 import java.util.List;
 
 import expressions.Factor;
+import expressions.Product;
 import expressions.Summand;
 import tokens.MultiplicationSymbol;
 import tokens.Token;
@@ -15,7 +16,8 @@ public class SummandParser {
     Summand toExpression(List<Token> tokenList) {
         Factor f = new FactorParser().toExpression(tokenList);
         if (tokenList.get(0) instanceof MultiplicationSymbol multiplicationSymbol) {
-            return null;
+            tokenList.remove(0);
+            return new Product(f, new SummandParser().toExpression(tokenList));
         } else {
             return f;
         }
