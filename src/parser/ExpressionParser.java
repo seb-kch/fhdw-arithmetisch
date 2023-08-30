@@ -2,6 +2,7 @@ package parser;
 
 import java.util.List;
 
+import exceptions.ParserException;
 import expressions.Expression;
 import expressions.Sum;
 import expressions.Summand;
@@ -15,8 +16,8 @@ import tokens.Token;
  * 
  * REQUIRES: !tokenList.isEmpty()  
  */
-public class ExpressionParser { 
-	public Expression toExpression(List<Token> tokenList){
+public class ExpressionParser {
+	public Expression toExpression(List<Token> tokenList) throws ParserException {
 		Summand s = new SummandParser().toExpression(tokenList);
 		Token nextToken = tokenList.get(0);  
 		if(nextToken instanceof AdditionSymbol) {

@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
+import exceptions.ParserException;
 import expressions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,14 +18,14 @@ class ParserTest {
 		this.input = new ArrayList<>();
 	}
 	@Test  // "0"
-	void naturalNumberTest() {
+	void naturalNumberTest() throws ParserException {
 		NaturalNumberToken nnToken = new NaturalNumberToken(0);
 		this.input.add(nnToken);
 		Expression expectedExpression = new NaturalNumber(nnToken);
 		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
 	@Test //"0+0"
-	void additionTest1() {
+	void additionTest1() throws ParserException {
 		NaturalNumberToken nnToken = new NaturalNumberToken(0);
 		this.input.add(nnToken);
 		this.input.add(AdditionSymbol.getTheInstance());
@@ -33,14 +34,14 @@ class ParserTest {
 		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
 	@Test //"3+4"
-	void additionTest2() {
+	void additionTest2() throws ParserException {
 		this.input.add(TestConstants.three);
 		this.input.add(AdditionSymbol.getTheInstance());
 		this.input.add(TestConstants.four);
 		Expression expectedExpression = new Sum(new NaturalNumber(TestConstants.three), new NaturalNumber(TestConstants.four));
 		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}@Test //"3+4+3"
-	void additionTest3() {
+	void additionTest3() throws ParserException {
 		this.input.add(TestConstants.three);
 		this.input.add(AdditionSymbol.getTheInstance());
 		this.input.add(TestConstants.four);
@@ -50,7 +51,7 @@ class ParserTest {
 		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
 	@Test //"3*4"
-	void multiplicationTest1() {
+	void multiplicationTest1() throws ParserException {
 		this.input.add(TestConstants.three);
 		this.input.add(MultiplicationSymbol.getTheInstance());
 		this.input.add(TestConstants.four);
@@ -58,7 +59,7 @@ class ParserTest {
 		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
 	@Test //"3*4+4"
-	void multiplicationTest2() {
+	void multiplicationTest2() throws ParserException {
 		this.input.add(TestConstants.three);
 		this.input.add(MultiplicationSymbol.getTheInstance());
 		this.input.add(TestConstants.four);
@@ -68,7 +69,7 @@ class ParserTest {
 		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
 	@Test //"1+2*3"
-	void multiplicationTest3() {
+	void multiplicationTest3() throws ParserException {
 		this.input.add(TestConstants.one);
 		this.input.add(AdditionSymbol.getTheInstance());
 		this.input.add(TestConstants.two);
@@ -78,7 +79,7 @@ class ParserTest {
 		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
 	@Test //"(3+4)"
-	void bracketTest1() {
+	void bracketTest1() throws ParserException {
 		this.input.add(BracketOpen.getTheInstance());
 		this.input.add(TestConstants.three);
 		this.input.add(AdditionSymbol.getTheInstance());
@@ -88,7 +89,7 @@ class ParserTest {
 		assertEquals(expectedExpression, new ExpressionParserProxy().toExpression(this.input));
 	}
 	@Test //"(3+4)*3"
-	void bracketTest2() {
+	void bracketTest2() throws ParserException {
 		this.input.add(BracketOpen.getTheInstance());
 		this.input.add(TestConstants.three);
 		this.input.add(AdditionSymbol.getTheInstance());

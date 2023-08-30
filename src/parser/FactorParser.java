@@ -2,6 +2,7 @@ package parser;
 
 import java.util.List;
 
+import exceptions.ParserException;
 import expressions.BracketExpression;
 import expressions.Expression;
 import expressions.Factor;
@@ -15,7 +16,7 @@ import tokens.Token;
  * Responsible for parsing expressions of type n (a natural number) or (E)
  */
 public class FactorParser {
-    Factor toExpression(List<Token> tokenList) { // TODO: Exception Handling
+    Factor toExpression(List<Token> tokenList)throws ParserException { // TODO: Exception Handling
         Token nextToken = tokenList.get(0);
         if (nextToken instanceof NaturalNumberToken nextTokenAsNaturalNumberToken) {
             tokenList.remove(0);
@@ -27,8 +28,8 @@ public class FactorParser {
             if (tokenList.get(0) instanceof BracketClose) {
                 tokenList.remove(0);
                 return new BracketExpression(e);
-            } else return null; // Replace with Exception
+            } else throw new ParserException("No closed Bracket was found");
         }
-        return null; // Replace with Exception!
+        throw new ParserException("Invalid Token: " + nextToken.toString()); // Replace with Exception!
     }
 }

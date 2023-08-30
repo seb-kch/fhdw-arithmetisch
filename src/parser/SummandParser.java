@@ -2,6 +2,7 @@ package parser;
 
 import java.util.List;
 
+import exceptions.ParserException;
 import expressions.Factor;
 import expressions.Product;
 import expressions.Summand;
@@ -13,7 +14,7 @@ import tokens.Token;
  * F*S or F
  */
 public class SummandParser {
-    Summand toExpression(List<Token> tokenList) {
+    Summand toExpression(List<Token> tokenList) throws ParserException {
         Factor f = new FactorParser().toExpression(tokenList);
         if (tokenList.get(0) instanceof MultiplicationSymbol multiplicationSymbol) {
             tokenList.remove(0);
