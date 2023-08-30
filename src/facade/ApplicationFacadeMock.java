@@ -3,17 +3,15 @@ package facade;
 import exceptions.CalculationException;
 import exceptions.ParserException;
 import expressions.Expression;
-import expressions.NaturalNumber;
-import tokens.NaturalNumberToken;
 /**
- * Attrappe, um die Kommunikation von GUI zu Applikationslogik zu demonstrieren   
+ * Atrappe, um die Kommunikation von GUI zu Applikationslogik zu demonstrieren   
  */
 public class ApplicationFacadeMock implements ApplicationFacade{
+	private static final String infoText = "Communication to Application has to be implemented";
 	public Expression checkSyntax(String input) throws ParserException {
-		return new NaturalNumber(new NaturalNumberToken(0));
+		throw new ParserException(infoText);
 	}
 	public Integer evaluate(String input) throws CalculationException, ParserException {
-		return 0;
+		throw new ParserException(infoText);
 	}
-
 }
