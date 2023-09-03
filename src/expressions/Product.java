@@ -1,19 +1,20 @@
 package expressions;
+
+import operator.Operator;
+
 /**
  * A term of type F*S
  */
 // TODO Complete this class
-public class Product implements Summand {
-
-	private Factor factor;
-	private Summand summand;
-	public Product(Factor f, Summand s) {
-		this.factor = f;
-		this.summand = s;
+public abstract class Product implements Summand, BinaryTerm {
+	private Operator op;
+	public Product(Operator op) {
+		super();
+		this.op = op;
 	}
 
 	public Integer evaluate(){
-		return factor.evaluate() * summand.evaluate();
+		return this.op.calculate(this.getArg1().evaluate(), this.getArg2().evaluate());
 	}
 	public boolean equals(Object obj) {
 		return obj instanceof Product;

@@ -16,7 +16,7 @@ import tokens.Token;
  * Responsible for parsing expressions of type n (a natural number) or (E)
  */
 public class FactorParser {
-    Factor toExpression(List<Token> tokenList)throws ParserException { // TODO: Exception Handling
+    Factor toExpression(List<Token> tokenList) throws ParserException { // TODO: Exception Handling
         Token nextToken = tokenList.get(0);
         if (nextToken instanceof NaturalNumberToken nextTokenAsNaturalNumberToken) {
             tokenList.remove(0);

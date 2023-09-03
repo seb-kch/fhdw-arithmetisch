@@ -5,6 +5,7 @@ import java.util.List;
 import exceptions.ParserException;
 import expressions.Expression;
 import expressions.Sum;
+import expressions.SumLTR;
 import expressions.Summand;
 import tokens.AdditionSymbol;
 import tokens.EndToken;

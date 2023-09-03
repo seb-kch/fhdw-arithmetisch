@@ -4,22 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa12ea27-9e12-4935-b1e5-97a07cdd9f19" name="Changes" comment="add week 6 solution and start with parsing">
-      <change afterPath="$PROJECT_DIR$/src/exceptions/CalculationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/ParserException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/facade/ApplicationFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/facade/ApplicationFacadeMock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/ApplicationView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArithmetischeAusdruecke2023Lösung.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ArithmetischeAusdruecke2023Lösung.ipr" afterDir="false" />
+    <list default="true" id="fa12ea27-9e12-4935-b1e5-97a07cdd9f19" name="Changes" comment="week 7: gui implementation">
+      <change afterPath="$PROJECT_DIR$/src/expressions/BinaryTerm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/expressions/SumLTR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/operator/Addition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/operator/Multiplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/operator/Operator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.shelf/Uncommitted_changes_before_Update_at_23_08_23__14_12__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ArithmetischeAusdruecke2023Lösung.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ArithmetischeAusdruecke2023Lösung.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/expressions/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expressions/Expression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/expressions/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expressions/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/expressions/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expressions/Sum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/ExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ExpressionParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ExpressionParserProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ExpressionParserProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/FactorParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/FactorParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/SummandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/SummandParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/frame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ApplicationView.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/frame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +163,11 @@
       <workItem from="1693295258401" duration="1835000" />
       <workItem from="1693297103255" duration="630000" />
       <workItem from="1693297745547" duration="4057000" />
+      <workItem from="1693485436458" duration="103000" />
+      <workItem from="1693487105830" duration="1068000" />
+      <workItem from="1693511638378" duration="598000" />
+      <workItem from="1693560599216" duration="3664000" />
+      <workItem from="1693762710624" duration="735000" />
     </task>
     <task id="LOCAL-00001" summary="add week 6 solution and start with parsing">
       <option name="closed" value="true" />
@@ -173,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693146089379</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="week 7: gui implementation">
+      <option name="closed" value="true" />
+      <created>1693424512012</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693424512012</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +216,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add week 6 solution and start with parsing" />
-    <option name="LAST_COMMIT_MESSAGE" value="add week 6 solution and start with parsing" />
+    <MESSAGE value="week 7: gui implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="week 7: gui implementation" />
   </component>
 </project>
