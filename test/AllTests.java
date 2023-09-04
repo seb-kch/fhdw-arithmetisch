@@ -1,8 +1,6 @@
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
-import ui.ApplicationView;
 
 @Suite
-@SelectClasses({LexerTest.class, ParserTest.class})
-public class AllTests {
-}
+@SelectClasses({LexerTest.class, ParserTest.class, EvaluationTest.class})
+public class AllTests { }

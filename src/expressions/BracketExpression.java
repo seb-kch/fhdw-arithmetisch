@@ -16,6 +16,9 @@ public class BracketExpression implements Factor {
 		return expression.evaluate();
 	}
 	public boolean equals(Object obj) {
-		return obj instanceof BracketExpression;
+		if(obj instanceof BracketExpression be) {
+			return be.expression.equals(this.expression);
+		}
+		return false;
 	}
 }

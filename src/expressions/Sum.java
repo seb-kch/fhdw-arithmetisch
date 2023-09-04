@@ -21,6 +21,9 @@ public class Sum implements Expression {
     }
 
     public boolean equals(Object obj) {
-        return obj instanceof Sum;
+        if(obj instanceof Sum s) {
+           return s.summand.equals(this.summand) && s.expression.equals(this.expression);
+        }
+        return false;
     }
 }
