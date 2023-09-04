@@ -1,26 +1,24 @@
 package expressions;
 
+import operator.MultiplicationOperator;
+
 /**
  * A term of type F*S
  */
 // TODO Complete this class
-public class Product implements Summand {
-
-    private Factor factor;
-    private Summand summand;
+public class Product extends BinaryExpression implements Summand {
 
     public Product(Factor f, Summand s) {
-        this.factor = f;
-        this.summand = s;
+        super(MultiplicationOperator.getInstance(), f, s);
     }
 
     public Integer evaluate() {
-        return factor.evaluate() * summand.evaluate();
+        return this.getOp().calculate(this.getArg1().evaluate(), this.getArg2().evaluate());
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof Product p) {
-            return p.summand.equals(this.summand) && p.factor.equals(this.factor);
+            return p.getArg1().equals(this.getArg1()) && p.getArg2().equals(this.getArg2());
         }
         return false;
     }

@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa12ea27-9e12-4935-b1e5-97a07cdd9f19" name="Changes" comment="week 7: gui implementation">
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/.shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/expressions/BinaryExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/operator/AdditionOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/operator/MultiplicationOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/operator/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/operator/OperatorTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArithmetischeAusdruecke2023Lösung.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ArithmetischeAusdruecke2023Lösung.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/woche_6/arithmetic(25b).svg" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/woche_6/arithmetic(25b).svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expressions/BracketExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expressions/BracketExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/expressions/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expressions/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/expressions/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expressions/Sum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AllTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ExpressionParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ParserTest.java" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/documentation/operator.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArithmetischeAusdruecke2023Lösung.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ArithmetischeAusdruecke2023Lösung.iws" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="editable-svg" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,7 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "sebastiankoch/week__6__operator",
+    "git-widget-placeholder": "sebastiankoch/week__6__own__operator",
     "last_opened_file_path": "/Users/sebastiankoch/IdeaProjects/FHDW/ArithmetischeAusdruecke2023Lösung/documentation/woche_6",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -161,16 +158,6 @@
       <workItem from="1693295258401" duration="1835000" />
       <workItem from="1693297103255" duration="630000" />
       <workItem from="1693297745547" duration="4057000" />
-<<<<<<< Updated upstream
-      <workItem from="1693813647085" duration="369000" />
-=======
-      <workItem from="1693485436458" duration="103000" />
-      <workItem from="1693487105830" duration="1068000" />
-      <workItem from="1693511638378" duration="598000" />
-      <workItem from="1693560599216" duration="3664000" />
-      <workItem from="1693762710624" duration="735000" />
-      <workItem from="1693814284330" duration="221000" />
->>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="add week 6 solution and start with parsing">
       <option name="closed" value="true" />

@@ -7,7 +7,6 @@ import expressions.Expression;
 import expressions.Sum;
 import expressions.Summand;
 import tokens.AdditionSymbol;
-import tokens.EndToken;
 import tokens.Token;
 
 /**

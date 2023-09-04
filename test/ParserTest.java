@@ -122,7 +122,7 @@ class ParserTest {
     }
 
     // Exception Tests
-    @Test
-    void
+//    @Test
+//    void
 // TODO Viele mehr Tests
 }
