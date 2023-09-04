@@ -8,12 +8,15 @@
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="junit5">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" name="junit.jupiter" level="project" />
-    <orderEntry type="library" name="junit.platform.console.standalone" level="project" />
-    <orderEntry type="library" name="junit.platform.suite" level="project" />
-    <orderEntry type="library" name="junit.platform.commons" level="project" />
-    <orderEntry type="library" name="junit.platform.suite.engine" level="project" />
-    <orderEntry type="library" name="junit.platform.suite.api" level="project" />
   </component>
 </module>

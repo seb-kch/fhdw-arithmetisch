@@ -1,8 +1,7 @@
 import expressions.NaturalNumber;
-import expressions.Sum;
+import expressions.DashTerm;
+import operator.AdditionOperator;
 import tokens.NaturalNumberToken;
-
-import java.util.ArrayList;
 
 public class TestConstants {
     // Tokens
@@ -30,6 +29,6 @@ public class TestConstants {
     public static final NaturalNumber nnNine = new NaturalNumber(nine);
 
     // Basic Sums
-    public static final Sum onePlusTwo = new Sum(nnOne, nnTwo);
-    public static final Sum threePlusFour = new Sum(nnThree, nnFour);
+    public static final DashTerm onePlusTwo = new DashTerm(nnOne, nnTwo, AdditionOperator.getInstance());
+    public static final DashTerm threePlusFour = new DashTerm(nnThree, nnFour, AdditionOperator.getInstance());
 }

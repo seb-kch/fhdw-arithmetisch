@@ -1,7 +1,10 @@
 package operator;
 
+import basic.TextConstants;
+import exceptions.ParserException;
 import tokens.AdditionSymbol;
 import tokens.MultiplicationSymbol;
+import tokens.SubtractionSymbol;
 import tokens.Token;
 
 import java.util.HashMap;
@@ -23,5 +26,17 @@ public class OperatorTable {
     private void createMap() {
         this.map.put(AdditionSymbol.getTheInstance(), AdditionOperator.getInstance());
         this.map.put(MultiplicationSymbol.getTheInstance(), MultiplicationOperator.getInstance());
+        this.map.put(SubtractionSymbol.getTheInstance(), SubtractionOperator.getInstance());
+    }
+
+    public boolean isInMap(Token t) {
+        return this.map.containsKey(t);
+    }
+
+    public Operator getOperatorFromToken(Token t) throws ParserException {
+        if (isInMap(t)) {
+            return this.map.get(t);
+        }
+        throw new ParserException(TextConstants.NOTAVALIDTOKEN);
     }
 }

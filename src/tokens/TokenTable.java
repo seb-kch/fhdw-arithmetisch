@@ -21,5 +21,6 @@ public class TokenTable {
 		this.symbols.put(TextConstants.BRACKETCLOSE, BracketClose.getTheInstance());
 		this.symbols.put(TextConstants.ADD, AdditionSymbol.getTheInstance());
 		this.symbols.put(TextConstants.MULTIPLY, MultiplicationSymbol.getTheInstance());
+		this.symbols.put(TextConstants.SUB, SubtractionSymbol.getTheInstance());
 	}
 }

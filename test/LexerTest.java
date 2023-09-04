@@ -9,13 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import lexer.Lexer;
 import lexer.LexerImpl;
-import tokens.AdditionSymbol;
-import tokens.BracketClose;
-import tokens.BracketOpen;
-import tokens.ErrorToken;
-import tokens.MultiplicationSymbol;
-import tokens.NaturalNumberToken;
-import tokens.Token;
+import tokens.*;
 
 class LexerTest {
 	private Lexer lexer;
@@ -116,6 +110,16 @@ class LexerTest {
 		expected.add(BracketOpen.getTheInstance());
 		expected.add(new NaturalNumberToken(1));
 		expected.add(AdditionSymbol.getTheInstance());
+		expected.add(new NaturalNumberToken(2));
+		expected.add(BracketClose.getTheInstance());
+		assertEquals(expected, result);
+	}@Test
+	void test12() {
+		List<Token> result = lexer.toTokenSequence("(1-2)");
+		List<Token> expected = new ArrayList<>();
+		expected.add(BracketOpen.getTheInstance());
+		expected.add(new NaturalNumberToken(1));
+		expected.add(SubtractionSymbol.getTheInstance());
 		expected.add(new NaturalNumberToken(2));
 		expected.add(BracketClose.getTheInstance());
 		assertEquals(expected, result);

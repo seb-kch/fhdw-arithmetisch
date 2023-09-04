@@ -3,7 +3,7 @@ package operator;
 public class AdditionOperator implements Operator {
     private static AdditionOperator instance = new AdditionOperator();
 
-    private AdditionOperator() {};
+    private AdditionOperator() {}
 
     public static AdditionOperator getInstance() {
         return AdditionOperator.instance;
